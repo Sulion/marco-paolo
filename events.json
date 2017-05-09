@@ -1,0 +1,68 @@
+[
+  {
+    "startDate": "2017-09-11T08:30:00",
+    "eventName": "Overview of development and divisions intro",
+    "performerName": "Jelenic, Benic",
+    "trackName": "All"
+  },
+  {
+    "startDate": "2017-09-11T09:00:00",
+    "eventName": "Infrastructure program",
+    "performerName": "Mader, Dubovac, Stipanov, Zagar",
+    "trackName": "All"
+  },
+  {
+    "startDate": "2017-09-11T09:20:00",
+    "eventName": "Coffee and talk break",
+    "performerName": "Infobip People",
+    "trackName": "All"
+  },
+  {
+    "startDate": "2017-09-11T09:40:00",
+    "eventName": "Platform program",
+    "performerName": "Zmak, Mimica",
+    "trackName": "All"
+  },
+  {
+    "startDate": "2017-09-11T10:00:00",
+    "eventName": "Enterprise platform",
+    "performerName": "Kutic, Kontosic, Kos-Grabar",
+    "trackName": "All"
+  },
+  {
+    "startDate": "2017-09-11T10:20:00",
+    "eventName": "Group photo break",
+    "performerName": "Infobip People",
+    "trackName": "All"
+  },
+  {
+    "startDate": "2017-09-11T10:50:00",
+    "eventName": "Openstack",
+    "performerName": "Koraca",
+    "trackName": "DEV/NET Track 1"
+  },
+  {
+    "startDate": "2017-09-11T10:50:00",
+    "eventName": "Anomaly detection and monitoring",
+    "performerName": "Bico, Dzaferovic",
+    "trackName": "DEV/NET Track 2"
+  },
+  {
+    "startDate": "2017-09-11T10:50:00",
+    "eventName": "Sprint Statemachine",
+    "performerName": "mGate Team",
+    "trackName": "DEV/NET Track 3"
+  },
+  {
+    "startDate": "2017-09-11T10:50:00",
+    "eventName": "Demistifying IPCore",
+    "performerName": "Jurki",
+    "trackName": "PO"
+  },
+  {
+    "startDate": "2017-09-11T10:20:00",
+    "eventName": "",
+    "performerName": "",
+    "trackName": ""
+  },
+]
