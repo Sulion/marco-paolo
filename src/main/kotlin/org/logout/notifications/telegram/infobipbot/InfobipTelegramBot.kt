@@ -1,5 +1,6 @@
 package org.logout.notifications.telegram.infobipbot
 
+import org.logout.notifications.telegram.bot.processor.StaImaNextEventProcessor
 import org.logout.notifications.telegram.data.entities.InfobipIncomingMessage
 import org.logout.notifications.telegram.data.entities.InfobipIncomingPackage
 import org.slf4j.LoggerFactory
@@ -10,7 +11,8 @@ import javax.annotation.PostConstruct
 
 @Component
 class InfobipTelegramBot @Autowired constructor(val taskScheduler: TaskScheduler,
-                                                val infobipTelegramService: InfobipTelegramService) {
+                                                val infobipTelegramService: InfobipTelegramService,
+                                                val staimaProcessor: StaImaNextEventProcessor) {
     companion object {
         val log = LoggerFactory.getLogger(InfobipTelegramBot::class.java)
     }
@@ -31,7 +33,15 @@ class InfobipTelegramBot @Autowired constructor(val taskScheduler: TaskScheduler
     }
 
     fun onSingleMessage(message: InfobipIncomingMessage) {
-        if (message.message.type == "TEXT")
-            infobipTelegramService.sendSingleMessage(message.message.text, message.from)
+        if (message.message.type == "TEXT") {
+            val text = message.message.text
+            when {
+                text.startsWith("/staima") -> infobipTelegramService.sendSingleMessage(
+                        staimaProcessor.onMessage(
+                                text.split(Regex("\\s")).drop(1/*/staima*/).toTypedArray()),
+                        message.from)
+                else -> infobipTelegramService.sendSingleMessage(message.message.text, message.from)
+            }
+        }
     }
 }

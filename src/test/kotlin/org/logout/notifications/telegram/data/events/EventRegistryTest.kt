@@ -39,4 +39,12 @@ class EventRegistryTest {
         assertEquals("Demystifying IPCore", result[3].eventName)
     }
 
+    @Test
+    fun test_findAllEventsRightAfter_Nothing() {
+        val calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"))
+        val date = calendar.apply { set(2018, Calendar.MAY, 11, 10, 45, 0) }.time
+        val result = registry.findAllEventsRightAfter(date)
+        assertEquals(0, result.size)
+    }
+
 }

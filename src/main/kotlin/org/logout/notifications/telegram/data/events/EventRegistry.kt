@@ -13,8 +13,8 @@ class EventRegistry(stream: InputStream, parser: ObjectMapper) {
             data.sortedBy { it.startDate }.find { it.startDate.after(date) }
 
     fun findAllEventsRightAfter(date: Date): List<Event> {
-        val firstEvent = data.sortedBy { it.startDate }.find { it.startDate.after(date) }
-        return data.filter { it.startDate == firstEvent!!.startDate }
+        val firstEvent = data.sortedBy { it.startDate }.find { it.startDate.after(date) } ?: return emptyList()
+        return data.filter { it.startDate == firstEvent.startDate }
     }
 
 }

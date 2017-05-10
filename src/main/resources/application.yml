@@ -9,3 +9,6 @@ telegram:
     applicationKey: ${APPLICATION_KEY}
     ownerLogin: ${OWNER_LOGIN}
     ownerPassword: ${OWNER_PASS}
+data:
+  event:
+    fileName: "events.json"
