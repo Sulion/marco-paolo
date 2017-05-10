@@ -27,7 +27,7 @@ class InfobipTelegramService(val baseUrl: String,
     }
 
     fun receiveAllmessages() =
-        template.getForObject(GET_INCOMING_MESSAGES_URL,
-                InfobipIncomingPackage::class.java)
+            template.getForObject(GET_INCOMING_MESSAGES_URL,
+                    InfobipIncomingPackage::class.java)
 
 }

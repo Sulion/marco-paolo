@@ -5,7 +5,7 @@ import org.telegram.telegrambots.api.objects.Update
 import org.telegram.telegrambots.bots.TelegramLongPollingCommandBot
 
 
-class MarcoPaoloBot(val token: String): TelegramLongPollingCommandBot() {
+class MarcoPaoloBot(val token: String) : TelegramLongPollingCommandBot() {
     override fun getBotUsername(): String {
         return "marco_paolo_bot"
     }
@@ -22,7 +22,7 @@ class MarcoPaoloBot(val token: String): TelegramLongPollingCommandBot() {
             val message = SendMessage() // Create a SendMessage object with mandatory fields
                     .setChatId(update.message.chatId)
                     .setText(text)
-                sendMessage(message) // Call method to send the message
+            sendMessage(message) // Call method to send the message
         }
     }
 

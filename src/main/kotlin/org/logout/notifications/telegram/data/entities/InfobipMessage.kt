@@ -7,6 +7,7 @@ import org.logout.notifications.telegram.data.DefaultConstructor
 data class InfobipMessage(val from: String,
                           @JsonProperty("to") val toKey: String,
                           val message: MessageBody)
+
 @DefaultConstructor
 data class MessageBody(val type: String,
                        val text: String)

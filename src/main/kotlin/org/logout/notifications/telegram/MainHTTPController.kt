@@ -15,11 +15,11 @@ import javax.annotation.PostConstruct
 
 @RestController
 open class MainHTTPController @Autowired constructor(val parser: ObjectMapper,
-                                                     val infobipTelegramService: InfobipTelegramService){
+                                                     val infobipTelegramService: InfobipTelegramService) {
 
     @RequestMapping("/greeting")
     open fun greeting(@RequestParam(value = "name", required = false, defaultValue = "World")
-                          name: String): String {
+                      name: String): String {
         return "Hello, $name!"
     }
 

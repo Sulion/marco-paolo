@@ -6,6 +6,6 @@ data class Event(val startDate: Date,
                  val eventName: String,
                  val performerName: String,
                  val trackName: String) {
-    constructor():this(Date(), "","","")
+    constructor() : this(Date(), "", "", "")
 }
 
