@@ -1,6 +1,7 @@
 package org.logout.notifications.telegram
 
 import org.logout.notifications.telegram.bot.MarcoPaoloBot
+import org.logout.notifications.telegram.bot.commands.StaImaGetNextEventCommand
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
@@ -22,6 +23,8 @@ open class MainHTTPController {
     open fun initBot() {
         ApiContextInitializer.init()
         val botsApi = TelegramBotsApi()
-        botsApi.registerBot(MarcoPaoloBot(System.getenv()["BOT_TOKEN"]!!))
+        val bot = MarcoPaoloBot(System.getenv()["BOT_TOKEN"]!!)
+        bot.register(StaImaGetNextEventCommand())
+        botsApi.registerBot(bot)
     }
 }
