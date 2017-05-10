@@ -2,12 +2,12 @@
 
 ## Abstract
 
-Marco-Paolo is a Telegram bot, telling you what are the forthcoming presentations and session taking place during Infobip DevDays 2017. Built to proof-test brand new Infobip Telegram API.
+Marco-Paolo is a Telegram bot, telling you what are the forthcoming presentations and session taking place during Infobip DevDays 2017. Built to proof-test brand new Infobip Telegram API by Mihovil Ryković and Sergije Konovalović.
 
 ## How To
 
 1. Become a proud Telegram user.
-2. Find `marco-paolo` bot in the directory.
+2. Find `marco_paolo_bot` in the directory.
 3. Tap `Start` to begin dialogue with bot.
 4. Send `/staima` command to get list of the forthcoming events.
 
