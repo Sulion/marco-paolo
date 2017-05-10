@@ -1,66 +1,66 @@
 [
   {
-    "startDate": "2017-09-11T08:30:00",
+    "startDate": "2017-05-11T08:30:00Z",
     "eventName": "Overview of development and divisions intro",
     "performerName": "Jelenić, Benić",
     "trackName": "All"
   },
   {
-    "startDate": "2017-09-11T09:00:00",
+    "startDate": "2017-05-11T09:00:00Z",
     "eventName": "Infrastructure program",
     "performerName": "Mađer, Dubovac, Stipanov, Žagar",
     "trackName": "All"
   },
   {
-    "startDate": "2017-09-11T09:20:00",
+    "startDate": "2017-05-11T09:20:00Z",
     "eventName": "Coffee and talk break",
     "performerName": "Infobip People",
     "trackName": "All"
   },
   {
-    "startDate": "2017-09-11T09:40:00",
+    "startDate": "2017-05-11T09:40:00Z",
     "eventName": "Platform program",
     "performerName": "Žmak, Mimica",
     "trackName": "All"
   },
   {
-    "startDate": "2017-09-11T10:00:00",
+    "startDate": "2017-05-11T10:00:00Z",
     "eventName": "Enterprise program",
     "performerName": "Kutić, Kontosić, Kos-Grabar",
     "trackName": "All"
   },
   {
-    "startDate": "2017-09-11T10:20:00",
+    "startDate": "2017-05-11T10:20:00Z",
     "eventName": "Group photo break",
     "performerName": "Infobip People",
     "trackName": "All"
   },
   {
-    "startDate": "2017-09-11T10:50:00",
+    "startDate": "2017-05-11T10:50:00Z",
     "eventName": "Openstack",
     "performerName": "Koraca",
     "trackName": "DEV/NET Track 1"
   },
   {
-    "startDate": "2017-09-11T10:50:00",
+    "startDate": "2017-05-11T10:50:00Z",
     "eventName": "Anomaly detection and monitoring",
     "performerName": "Bičo, Džaferović",
     "trackName": "DEV/NET Track 2"
   },
   {
-    "startDate": "2017-09-11T10:50:00",
+    "startDate": "2017-05-11T10:50:00Z",
     "eventName": "Spring Statemachine",
     "performerName": "mGate Team",
     "trackName": "DEV/NET Track 3"
   },
   {
-    "startDate": "2017-09-11T10:50:00",
+    "startDate": "2017-05-11T10:50:00Z",
     "eventName": "Demystifying IPCore",
     "performerName": "Jurki",
     "trackName": "PO"
   },
   {
-    "startDate": "2017-09-11T10:20:00",
+    "startDate": "2017-05-11T10:20:00Z",
     "eventName": "",
     "performerName": "",
     "trackName": ""
