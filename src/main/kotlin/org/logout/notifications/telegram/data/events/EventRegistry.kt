@@ -3,11 +3,13 @@ package org.logout.notifications.telegram.data.events
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
 import java.io.InputStream
+import java.util.*
 
-/**
- * Created by sulion on 10.05.17.
- */
+
 class EventRegistry(stream: InputStream, parser: ObjectMapper) {
-    val data = parser.readValue<List<Event>>(stream)
+    private val data = parser.readValue<List<Event>>(stream)
+
+    fun findNextEventAfter(date: Date) =
+        data.sortedBy { it.startDate }.find { it.startDate.after(date) }
 
 }

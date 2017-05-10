@@ -19,7 +19,7 @@ val LOGTAG = "STAIMACOMMAND"
 
 class StaImaGetNextEventCommand(val events: EventRegistry) : BotCommand(COMMAND_NAME, COMMAND_DESCRIPTION) {
     override fun execute(absSender: AbsSender, user: User?, chat: Chat, arguments: Array<String>?) {
-        val next = events.data.sortedBy { it.startDate }.find { it.startDate.after(Date()) }
+        val next = events.findNextEventAfter(Date())
         val answerText = if(next != null) {
             """
             Your next event is ${next.eventName} by ${next.performerName} at ${next.startDate} on ${next.trackName} track. Get ready!

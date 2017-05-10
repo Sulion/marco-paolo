@@ -1,1 +1,11 @@
-spring.thymeleaf.enabled: false
+server.port: 8443
+server.ssl.key-store: keystore.p12
+server.ssl.key-store-password: ${KEYSTORE_PASS}
+server.ssl.keyStoreType: PKCS12
+server.ssl.keyAlias: mpaolo
+telegram:
+  infobip:
+    baseUrl: "https://oneapi.infobip.com"
+    applicationKey: ${APPLICATION_KEY}
+    ownerLogin: ${OWNER_LOGIN}
+    ownerPassword: ${OWNER_PASS}
