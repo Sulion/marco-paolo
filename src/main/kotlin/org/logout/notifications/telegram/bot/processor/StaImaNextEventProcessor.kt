@@ -41,11 +41,19 @@ class StaImaNextEventProcessor(private val eventRegistry: EventRegistry) {
     private fun allNextEvents(): String {
         val nextEvents = eventRegistry.findAllEventsRightAfter(Date())
         return when (nextEvents.size) {
-            0 -> "You don't seem to have anything planned. Enjoy your spare time!"
+            0 -> renderNoEvents(Date())
             1 -> renderSingleEvent(nextEvents[0])
             else -> renderMultipleEvents(nextEvents)
         }
     }
+
+    private fun renderNoEvents(date: Date) =
+            if (date.after(eventRegistry.getLastEventTime())) {
+                "Dev Days have ended. See you in 2018!"
+            } else {
+                "You don't seem to have anything planned. Enjoy your spare time!"
+            }
+
 
     private fun render(date: Date): String =
             SimpleDateFormat("MMM dd, HH:mm").apply {

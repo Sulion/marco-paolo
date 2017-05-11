@@ -18,4 +18,7 @@ class EventRegistry(stream: InputStream, parser: ObjectMapper) {
         return data.filter { it.startDate == firstEvent.startDate }
     }
 
+    fun getLastEventTime() =
+            data.last().startDate
+
 }
