@@ -1,6 +1,7 @@
 package org.logout.notifications.telegram.bot
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import org.logout.notifications.telegram.bot.processor.HelpProcessor
 import org.logout.notifications.telegram.bot.processor.StaImaNextEventProcessor
 import org.logout.notifications.telegram.data.events.EventRegistry
 import org.springframework.beans.factory.annotation.Value
@@ -20,5 +21,7 @@ open class CommonBotConfiguration {
 
     @Bean open fun staImaNextEventProcessor(eventRegistry: EventRegistry) =
             StaImaNextEventProcessor(eventRegistry)
+
+    @Bean open fun helpProcessor() = HelpProcessor()
 
 }

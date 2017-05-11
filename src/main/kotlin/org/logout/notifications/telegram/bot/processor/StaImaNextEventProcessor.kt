@@ -6,13 +6,13 @@ import org.slf4j.LoggerFactory
 import java.text.SimpleDateFormat
 import java.util.*
 
-class StaImaNextEventProcessor(private val eventRegistry: EventRegistry) {
+class StaImaNextEventProcessor(private val eventRegistry: EventRegistry) : Processor {
 
     companion object {
         val log = LoggerFactory.getLogger(StaImaNextEventProcessor::class.java)
     }
 
-    fun onMessage(arguments: Array<String>?): String =
+    override fun onMessage(arguments: Array<String>?): String =
             if (arguments == null || arguments.isEmpty()) {
                 allNextEvents()
             } else {
@@ -39,7 +39,7 @@ class StaImaNextEventProcessor(private val eventRegistry: EventRegistry) {
                             msg.append(line)
                     }
                 }
-                msg.toString().also { log.info("This will be sent: {}", it) }
+                msg.toString().also { log.trace("This will be sent: {}", it) }
             }
         }
     }

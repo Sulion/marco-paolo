@@ -4,6 +4,7 @@ import org.logout.notifications.telegram.data.entities.InfobipIncomingPackage
 import org.logout.notifications.telegram.data.entities.InfobipMessage
 import org.logout.notifications.telegram.data.entities.MessageBody
 import org.logout.notifications.telegram.data.entities.Users
+import org.slf4j.LoggerFactory
 import org.springframework.web.client.RestTemplate
 
 class InfobipTelegramService(val baseUrl: String,
@@ -14,6 +15,10 @@ class InfobipTelegramService(val baseUrl: String,
     private val POST_MESSAGE_URL = "$baseUrl/telegram/1/single"
     private val GET_INCOMING_MESSAGES_URL = "$baseUrl/telegram/1/inbox/reports"
 
+    companion object {
+        val log = LoggerFactory.getLogger(InfobipTelegramService::class.java)
+    }
+
 
     fun fetchUsers(): Users =
             template.getForObject(GET_USERS_URL, Users::class.java)
@@ -23,7 +28,7 @@ class InfobipTelegramService(val baseUrl: String,
                 InfobipMessage(applicationKey, address,
                         MessageBody("TEXT", msgText)),
                 Any::class.java)
-        println(result)
+        log.info("Message sent: {}", result)
     }
 
     fun receiveAllmessages() =
