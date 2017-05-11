@@ -8,12 +8,13 @@ import java.util.*
 
 class EventRegistry(stream: InputStream, parser: ObjectMapper) {
     private val data = parser.readValue<List<Event>>(stream)
+            .sortedBy { it.startDate }
 
     fun findNextEventAfter(date: Date) =
-            data.sortedBy { it.startDate }.find { it.startDate.after(date) }
+            data.find { it.startDate.after(date) }
 
     fun findAllEventsRightAfter(date: Date): List<Event> {
-        val firstEvent = data.sortedBy { it.startDate }.find { it.startDate.after(date) } ?: return emptyList()
+        val firstEvent = data.find { it.startDate.after(date) } ?: return emptyList()
         return data.filter { it.startDate == firstEvent.startDate }
     }
 
