@@ -36,10 +36,14 @@ class InfobipTelegramBot @Autowired constructor(private val taskScheduler: TaskS
         if (message.message.type == "TEXT") {
             val text = message.message.text
             when {
-                text.startsWith("/staima") -> infobipTelegramService.sendSingleMessage(
-                        staimaProcessor.onMessage(
-                                text.split(Regex("\\s")).drop(1/*/staima*/).toTypedArray()),
-                        message.from)
+                text.startsWith("/staima") ||
+                        text.startsWith("/whatsup") ||
+                        text.startsWith("/whazup") ||
+                        text.startsWith("/чотамухохлов") ->
+                    infobipTelegramService.sendSingleMessage(
+                            staimaProcessor.onMessage(
+                                    text.split(Regex("\\s")).drop(1/*/staima*/).toTypedArray()),
+                            message.from)
                 else -> infobipTelegramService.sendSingleMessage(message.message.text, message.from)
             }
         }

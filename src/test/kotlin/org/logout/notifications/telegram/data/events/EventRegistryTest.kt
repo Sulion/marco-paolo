@@ -47,4 +47,15 @@ class EventRegistryTest {
         assertEquals(0, result.size)
     }
 
+    @Test
+    fun test_findAllEventsForTheDay_Some() {
+        val calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"))
+        val date = calendar.apply {
+            set(2017, Calendar.MAY, 11, 10, 20, 0)
+            set(Calendar.MILLISECOND, 0)
+        }.time
+        val result = registry.findEventsForToday(date)
+        assertEquals(6, result.size)
+    }
+
 }
