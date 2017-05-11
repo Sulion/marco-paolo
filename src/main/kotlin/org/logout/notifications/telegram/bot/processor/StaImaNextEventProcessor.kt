@@ -2,10 +2,16 @@ package org.logout.notifications.telegram.bot.processor
 
 import org.logout.notifications.telegram.data.events.Event
 import org.logout.notifications.telegram.data.events.EventRegistry
+import org.slf4j.LoggerFactory
 import java.text.SimpleDateFormat
 import java.util.*
 
 class StaImaNextEventProcessor(private val eventRegistry: EventRegistry) {
+
+    companion object {
+        val log = LoggerFactory.getLogger(StaImaNextEventProcessor::class.java)
+    }
+
     fun onMessage(arguments: Array<String>?): String =
             if (arguments == null || arguments.isEmpty()) {
                 allNextEvents()
@@ -21,13 +27,13 @@ class StaImaNextEventProcessor(private val eventRegistry: EventRegistry) {
         return when (nextEvents.size) {
             0 -> renderNoEvents(Date())
             else -> {
-                val msg = StringBuilder().append("Your schedule for the rest of the day: \n")
+                val msg = StringBuilder().append("Your schedule for the rest of the day: \\n")
                 nextEvents.forEachIndexed {
                     index, (startDate, eventName, performerName, trackName) ->
                     msg.append("$index. ${render2(startDate)}: $eventName by " +
-                            "$performerName on $trackName track\n")
+                            "$performerName on $trackName track\\n")
                 }
-                msg.toString()
+                msg.toString().also { log.info("This will be sent: {}", it) }
             }
         }
     }
