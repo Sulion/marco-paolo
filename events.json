@@ -160,8 +160,8 @@
   },
   {
     "startDate": "2017-05-11T15:00:00+02:00",
-    "eventName": "Lightning talks! Async processing at IAM / Using IAM as authentication and authorization proxy / DB proxy and MS JDBC driver / Spring @Scheduled trap",
     "eventDescription": "Why we are ahead of Netflix? / How to use IAM as a simple authentication and authorization HTTP proxy to your backend and why you might want to use it that way / The cool features that come with migration / Spring schedulers don't behave like you might guess. We learned it hard way",
+    "eventName": "Lightning talks! Async processing at IAM / Using IAM as authentication and authorization proxy / DB proxy and MS JDBC driver / Sprint @Scheduled trap",
     "performerName": "Ćutić / Pandžić / Rumin / Matošević",
     "trackName": "DEV/NET Track 3"
   },

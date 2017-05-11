@@ -1,0 +1,10 @@
+telegram:
+  token: ${BOT_TOKEN}
+  infobip:
+    baseUrl: "https://oneapi.infobip.com"
+    applicationKey: ${APPLICATION_KEY}
+    ownerLogin: ${OWNER_LOGIN}
+    ownerPassword: ${OWNER_PASS}
+data:
+  event:
+    fileName: "events.json"
