@@ -10,9 +10,9 @@ import org.springframework.stereotype.Component
 import javax.annotation.PostConstruct
 
 @Component
-class InfobipTelegramBot @Autowired constructor(val taskScheduler: TaskScheduler,
-                                                val infobipTelegramService: InfobipTelegramService,
-                                                val staimaProcessor: StaImaNextEventProcessor) {
+class InfobipTelegramBot @Autowired constructor(private val taskScheduler: TaskScheduler,
+                                                private val infobipTelegramService: InfobipTelegramService,
+                                                private val staimaProcessor: StaImaNextEventProcessor) {
     companion object {
         val log = LoggerFactory.getLogger(InfobipTelegramBot::class.java)
     }
@@ -42,6 +42,12 @@ class InfobipTelegramBot @Autowired constructor(val taskScheduler: TaskScheduler
                         message.from)
                 else -> infobipTelegramService.sendSingleMessage(message.message.text, message.from)
             }
+        }
+    }
+
+    fun sendToEveryone(messageText: String) {
+        infobipTelegramService.fetchUsers().users.forEach {
+            infobipTelegramService.sendSingleMessage(messageText, it.key)
         }
     }
 }

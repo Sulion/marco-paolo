@@ -1,4 +1,5 @@
 telegram:
+  token: ${BOT_TOKEN}
   infobip:
     baseUrl: "https://oneapi.infobip.com"
     applicationKey: ${APPLICATION_KEY}
