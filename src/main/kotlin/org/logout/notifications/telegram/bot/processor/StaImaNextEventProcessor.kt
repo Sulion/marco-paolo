@@ -29,12 +29,12 @@ class StaImaNextEventProcessor(private val eventRegistry: EventRegistry) {
         return when (nextEvents.size) {
             0 -> renderNoEvents(Date())
             else -> {
-                val msg = StringBuilder().append("Your schedule for the rest of the day: \\n")
+                val msg = StringBuilder().append("Your schedule for the rest of the day: \n")
                 nextEvents.forEachIndexed {
                     index, (startDate, eventName, performerName, trackName) ->
                     run {
                         val line = "$index. ${render2(startDate)}: $eventName by " +
-                                "$performerName on $trackName track\\n"
+                                "$performerName on $trackName track\n"
                         if (msg.length + line.length < MAX_MSG_LENGTH)
                             msg.append(line)
                     }
