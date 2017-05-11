@@ -2,42 +2,49 @@
   {
     "startDate": "2017-05-11T09:30:00+02:00",
     "eventName": "Overview of development and divisions intro",
+    "eventDescription": "",
     "performerName": "Jelenić, Benić",
     "trackName": "All"
   },
   {
     "startDate": "2017-05-11T10:00:00+02:00",
     "eventName": "Infrastructure program",
+    "eventDescription": "",
     "performerName": "Mađer, Dubovac, Stipanov, Žagar",
     "trackName": "All"
   },
   {
     "startDate": "2017-05-11T10:20:00+02:00",
     "eventName": "Coffee and talk break",
+    "eventDescription": "",
     "performerName": "Infobip People",
     "trackName": "All"
   },
   {
     "startDate": "2017-05-11T10:40:00+02:00",
     "eventName": "Platform program",
+    "eventDescription": "",
     "performerName": "Žmak, Mimica",
     "trackName": "All"
   },
   {
     "startDate": "2017-05-11T11:00:00+02:00",
     "eventName": "Enterprise program",
+    "eventDescription": "",
     "performerName": "Kutić, Kontosić, Kos-Grabar",
     "trackName": "All"
   },
   {
     "startDate": "2017-05-11T11:20:00+02:00",
     "eventName": "Group photo break",
+    "eventDescription": "",
     "performerName": "Infobip People",
     "trackName": "All"
   },
   {
     "startDate": "2017-05-11T11:50:00+02:00",
     "eventName": "Openstack",
+    "eventDescription": "",
     "performerName": "Koraca",
     "trackName": "DEV/NET Track 1"
   },
@@ -56,163 +63,505 @@
   {
     "startDate": "2017-05-11T11:50:00+02:00",
     "eventName": "Demystifying IPCore",
+    "eventDescription": "",
     "performerName": "Jurki",
     "trackName": "PO"
   },
   {
     "startDate": "2017-05-11T12:20:00+02:00",
     "eventName": "Coffee and talk break",
+    "eventDescription": "",
     "performerName": "Infobip people",
     "trackName": "All"
   },
   {
     "startDate": "2017-05-11T12:40:00+02:00",
     "eventName": "Fully automated service monitoring",
+    "eventDescription": "How we automated monitoring of all infobip and non-infobip services",
     "performerName": "Markanović",
     "trackName": "DEV/NET Track 1"
   },
   {
     "startDate": "2017-05-11T12:40:00+02:00",
     "eventName": "Flame graphs",
+    "eventDescription": "Flame graphs intro (what is it, and how does it work), profiling an app/service using flame graphs and making sense of results",
     "performerName": "Mahovlić",
     "trackName": "DEV/NET Track 2"
   },
   {
     "startDate": "2017-05-11T12:40:00+02:00",
     "eventName": "Spring cloud dataflow",
+    "eventDescription": "Orchestration of a data pipeline. What is it and how we can use it?",
     "performerName": "Dučić",
     "trackName": "DEV/NET Track 3"
   },
   {
     "startDate": "2017-05-11T12:40:00+02:00",
     "eventName": "Client engagement activities overview - events and clients",
+    "eventDescription": "",
     "performerName": "Kutić",
     "trackName": "PO"
   },
   {
     "startDate": "2017-05-11T13:10:00+02:00",
     "eventName": "Lunch break",
+    "eventDescription": "",
     "performerName": "Infobip people",
     "trackName": "All"
   },
   {
     "startDate": "2017-05-11T14:10:00+02:00",
     "eventName": "Lightning talks! Automation of our deployment process / Deployment manager plugin / Production access automation / Java meetup",
+    "eventDescription": "How we used existing Infobip & external tools to deploy, send deployment email and test our services with only one click / Intellij IDEA plugin integrating with the Deployment Manager API, for common actions performed by developers (read info, deploy, revert, start/stop, etc.) / How we're speeding up the PAR process from a few hours/days to a few seconds/minutes / Our motivation, our implementation and our journey to social media spam",
     "performerName": "Hula / Dokara / El Tabari / Dučić",
     "trackName": "DEV/NET Track 1"
   },
   {
     "startDate": "2017-05-11T14:10:00+02:00",
     "eventName": "Connecting with operators",
+    "eventDescription": "How do we physically connect to MNOs? Which protocols, HW do we use? What are challenges?",
     "performerName": "NDI team",
     "trackName": "DEV/NET Track 2"
   },
   {
     "startDate": "2017-05-11T14:10:00+02:00",
     "eventName": "CompletableFuture puzzlers",
+    "eventDescription": "Common pitfalls, lacking API methods, new API in Java 9",
     "performerName": "Kuznetsov",
     "trackName": "DEV/NET Track 3"
   },
   {
     "startDate": "2017-05-11T14:10:00+02:00",
     "eventName": "Panel discussion on future products",
+    "eventDescription": "How will portal look like in the near future, what do we want to achieve with OMNI, new stuff, big picture",
     "performerName": "Žmak",
     "trackName": "PO"
   },
   {
     "startDate": "2017-05-11T14:40:00+02:00",
     "eventName": "Coffe and talk break",
+    "eventDescription": "",
     "performerName": "Infobip people",
     "trackName": "All"
   },
   {
     "startDate": "2017-05-11T15:00:00+02:00",
     "eventName": "Java native memory troubleshooting",
+    "eventDescription": "Everybody leaks in more details",
     "performerName": "Mimica",
     "trackName": "DEV/NET Track 1"
   },
   {
     "startDate": "2017-05-11T15:00:00+02:00",
     "eventName": "ORM frameworks",
+    "eventDescription": "When and how to use ORM frameworks from DB POV",
     "performerName": "DB team",
     "trackName": "DEV/NET Track 2"
   },
   {
     "startDate": "2017-05-11T15:00:00+02:00",
-    "eventName": "Lightning talks! Async processing at IAM / Using IAM as authentication and authorization proxy / DB proxy and MS JDBC driver / Sprint @Scheduled trap",
+    "eventName": "Lightning talks! Async processing at IAM / Using IAM as authentication and authorization proxy / DB proxy and MS JDBC driver / Spring @Scheduled trap",
+    "eventDescription": "Why we are ahead of Netflix? / How to use IAM as a simple authentication and authorization HTTP proxy to your backend and why you might want to use it that way / The cool features that come with migration / Spring schedulers don't behave like you might guess. We learned it hard way",
     "performerName": "Ćutić / Pandžić / Rumin / Matošević",
     "trackName": "DEV/NET Track 3"
   },
   {
     "startDate": "2017-05-11T15:00:00+02:00",
     "eventName": "How to increase product engagement, 1st part: OMNI, OTT, mail, push, voice",
+    "eventDescription": "",
     "performerName": "Product owners",
     "trackName": "PO"
   },
   {
     "startDate": "2017-05-11T15:30:00+02:00",
     "eventName": "Coffee and talk break",
+    "eventDescription": "",
     "performerName": "Infobip people",
     "trackName": "All"
   },
   {
     "startDate": "2017-05-11T15:50:00+02:00",
     "eventName": "Provisioning VMs on DM",
+    "eventDescription": "What we have now and what we are working on",
     "performerName": "Dostić / Pindrić",
     "trackName": "DEV/NET Track 1"
   },
   {
     "startDate": "2017-05-11T15:50:00+02:00",
     "eventName": "War stories",
+    "eventDescription": "We deal with a lot of strange and random events, we'd like to share some with you",
     "performerName": "El Tabari",
     "trackName": "DEV/NET Track 2"
   },
   {
     "startDate": "2017-05-11T15:50:00+02:00",
     "eventName": "Java reactive programming",
+    "eventDescription": "",
     "performerName": "Antoliš",
     "trackName": "DEV/NET Track 3"
   },
   {
     "startDate": "2017-05-11T15:50:00+02:00",
     "eventName": "How to increase product engagement, 2nd part",
+    "eventDescription": "",
     "performerName": "Produt owners",
     "trackName": "PO"
   },
   {
     "startDate": "2017-05-11T16:20:00+02:00",
     "eventName": "Coffee and talk break",
+    "eventDescription": "",
     "performerName": "Infobip people",
     "trackName": "All"
   },
   {
     "startDate": "2017-05-11T16:30:00+02:00",
     "eventName": "Workshops / Meetings / Open space",
+    "eventDescription": "",
     "performerName": "Infobip people",
     "trackName": "All"
   },
   {
     "startDate": "2017-05-11T19:00:00+02:00",
     "eventName": "Dinner :)",
+    "eventDescription": "",
     "performerName": "Infobip people",
     "trackName": "All"
   },
   {
     "startDate": "2017-05-11T21:30:00+02:00",
     "eventName": "Infobip Geek Quiz",
+    "eventDescription": "",
     "performerName": "Infobip People",
     "trackName": "All"
   },
   {
-    "startDate": "2017-05-12T09:00:00+02:00",
-    "eventName": "Telco division",
-    "performerName": "Kovačić, Milotić, Vučković",
-    "trackName": ""
+     "startDate": "2017-05-12T09:00:00+02:00",
+     "eventName": "Telco division",
+     "eventDescription": "👍",
+     "performerName": "Kovačić, Milotić, Vučković",
+     "trackName": "All"
   },
   {
-    "startDate": "2017-05-12T10:00:00+02:00",
-    "eventName": "",
-    "performerName": "",
-    "trackName": ""
+     "startDate": "2017-05-12T09:20:00+02:00",
+     "eventName": "Internal tools program",
+     "eventDescription": "👍",
+     "performerName": "Mehadžić, Dragozetić, Lazarić, Cvijanović",
+     "trackName": "All"
   },
+  {
+     "startDate": "2017-05-12T09:40:00+02:00",
+     "eventName": "Centili",
+     "eventDescription": "👍",
+     "performerName": "Branković, Savić",
+     "trackName": "All"
+  },
+  {
+     "startDate": "2017-05-12T10:00:00+02:00",
+     "eventName": "Coffee and talk break",
+     "eventDescription": "🍵",
+     "performerName": "Infobip people",
+     "trackName": "All"
+  },
+  {
+     "startDate": "2017-05-12T10:30:00+02:00",
+     "eventName": "Network HA for MDB",
+     "eventDescription": "What we did to ensure that Main Database is HA (High Availiability) on network layer, SLA route monitoring, dual VPNs",
+     "performerName": "Pisnjak",
+     "trackName": "DEV/NET Track 1"
+  },
+  {
+     "startDate": "2017-05-12T10:30:00+02:00",
+     "eventName": "Introduction to Webpack 2",
+     "eventDescription": "Introduction to Webpack 2 and short features overview + how it can be used in Infobip",
+     "performerName": "Bulić",
+     "trackName": "DEV/NET Track 2"
+  },
+  {
+     "startDate": "2017-05-12T10:30:00+02:00",
+     "eventName": "VoIB",
+     "eventDescription": "Voice over Infobip",
+     "performerName": "Rudonja",
+     "trackName": "DEV/NET Track 3"
+  },
+  {
+     "startDate": "2017-05-12T10:30:00+02:00",
+     "eventName": "Brainstorm sessions: Going from product metrics to customer metrics",
+     "eventDescription": "What do we need to measure in order to follow the whole customer life cycle? Why is this important for product growth?",
+     "performerName": "Ivanišević",
+     "trackName": "PO"
+  },
+  {
+     "startDate": "2017-05-12T10:30:00+02:00",
+     "eventName": "Release planning",
+     "eventDescription": "Steps towards successful release planning: specification of features&tasks, discussions with stakeholders, grooming with dev team + effort estimations, velocity calculation, reserve time for fast track & technical improvements, alignment with mgmt, presentation of roadmap scope etc",
+     "performerName": " Kovačić",
+     "trackName": "PO"
+  },
+  {
+     "startDate": "2017-05-12T10:30:00+02:00",
+     "eventName": "Product champions",
+     "eventDescription": "no additional description is provided",
+     "performerName": "Farkaš",
+     "trackName": "PO"
+  },
+  {
+     "startDate": "2017-05-12T10:30:00+02:00",
+     "eventName": "Customer integration analysis",
+     "eventDescription": "no additional description is provided",
+     "performerName": "Badurina",
+     "trackName": "PO"
+  },
+  {
+     "startDate": "2017-05-12T11:00:00+02:00",
+     "eventName": "Coffee and talk break",
+     "eventDescription": "🍵",
+     "performerName": "Infobip people",
+     "trackName": "All"
+  },
+  {
+     "startDate": "2017-05-12T11:20:00+02:00",
+     "eventName": "Multi DC",
+     "eventDescription": "How to implement true Multi Data Center architecture and ensure data consistency globally",
+     "performerName": "Matošević",
+     "trackName": "DEV/NET Track 1"
+  },
+  {
+     "startDate": "2017-05-12T11:20:00+02:00",
+     "eventName": "Enhancing messaging for Email",
+     "eventDescription": "Overview on how we implemented handling of large content with layouts, and much more",
+     "performerName": "Team Kabaddi",
+     "trackName": "DEV/NET Track 2"
+  },
+  {
+     "startDate": "2017-05-12T11:20:00+02:00",
+     "eventName": "Breaking monolith to micro-services",
+     "eventDescription": "Breaking monolith UTS to microservices. Microservices implementatio n, experiences and pitfalls, how we did it. BSS demistified, how it works now and how will it work in future",
+     "performerName": "Kos, Majetić",
+     "trackName": "DEV/NET Track 3"
+  },
+  {
+     "startDate": "2017-05-12T11:20:00+02:00",
+     "eventName": "Brainstorm sessions 2nd part",
+     "eventDescription": "(no additional info)",
+     "performerName": "Product Owners",
+     "trackName": "PO"
+  },
+  {
+     "startDate": "2017-05-12T11:50:00+02:00",
+     "eventName": "Coffee and talk break",
+     "eventDescription": "🍵",
+     "performerName": "Infobip people",
+     "trackName": "All"
+  },
+  {
+     "startDate": "2017-05-12T12:10:00+02:00",
+     "eventName": "Data Centers architecture/connection overview",
+     "eventDescription": "Overview of data centers we have, connections and specific architecture used for Infobip traffic flow. What is FR5, FR4 and/or FR45? What is new since last time we have talked about our global DC network infrastructure?",
+     "performerName": "Neković",
+     "trackName": "DEV/NET Track 1"
+  },
+  {
+     "startDate": "2017-05-12T12:10:00+02:00",
+     "eventName": "Visual Studio Code",
+     "eventDescription": "Need a good text editor for writing C#, JAVA, HTML,CSS... with intelisense, git support?",
+     "performerName": "Team Lynx",
+     "trackName": "DEV/NET Track 2"
+  },
+  {
+     "startDate": "2017-05-12T12:10:00+02:00",
+     "eventName": ".NET CORE",
+     "eventDescription": "Microsoft Open Source!??? It's there! Where is it going, integration with js frameworks, modality, performance... do we like it?",
+     "performerName": "Team Lynx",
+     "trackName": "DEV/NET Track 2"
+  },
+  {
+     "startDate": "2017-05-12T12:10:00+02:00",
+     "eventName": ".NET Core Security Middleware",
+     "eventDescription": "Use existing one or write your own RESTful Web Service security middleware",
+     "performerName": "Cvijanović",
+     "trackName": "DEV/NET Track 2"
+  },
+  {
+     "startDate": "2017-05-12T12:10:00+02:00",
+     "eventName": "Agile Topics card deck",
+     "eventDescription": "How we integrated agil e topics cards to our daily standup meetings and what we learned from them",
+     "performerName": "Kozačinski",
+     "trackName": "DEV/NET Track 2"
+  },
+  {
+     "startDate": "2017-05-12T12:10:00+02:00",
+     "eventName": "Push Notification - why so difficult?",
+     "eventDescription": "Quick overview of architecture, some performance issues and other stuff that we faced while building Push V3",
+     "performerName": "Team Mobile Messaging",
+     "trackName": "DEV/NET Track 3"
+  },
+  {
+     "startDate": "2017-05-12T12:10:00+02:00",
+     "eventName": "Brainstorming session, 4th part",
+     "eventDescription": "(no additional info)",
+     "performerName": "Product owners",
+     "trackName": "PO"
+  },
+  {
+     "startDate": "2017-05-12T12:40:00+02:00",
+     "eventName": "Coffee and talk break",
+     "eventDescription": "🍵",
+     "performerName": "Infobip people",
+     "trackName": "All"
+  },
+  {
+     "startDate": "2017-05-12T13:00:00+02:00",
+     "eventName": "DO-s and DONT-s of database design",
+     "eventDescription": "Best practices of database design that allow for high performance queries",
+     "performerName": "DB Team",
+     "trackName": "DEV/NET Track 1"
+  },
+  {
+     "startDate": "2017-05-12T13:00:00+02:00",
+     "eventName": "Chrome DevTools - 50 (or more) useful tips and tricks for everyday life",
+     "eventDescription": "Overview of using DevTools for debugging, editing, profiling web pages, plugins for angularJs/reactJs",
+     "performerName": "Alexey Grushihin (Logout)",
+     "trackName": "DEV/NET Track 2"
+  },
+  {
+     "startDate": "2017-05-12T13:00:00+02:00",
+     "eventName": "Networking updates",
+     "eventDescription": "(no additional info provided)",
+     "performerName": "Unknown person or team",
+     "trackName": "DEV/NET Track 3"
+  },
+  {
+     "startDate": "2017-05-12T13:00:00+02:00",
+     "eventName": "Brainstorming session, 4th part",
+     "eventDescription": "(no additional info provided)",
+     "performerName": "Product owners",
+     "trackName": "PO"
+  },
+  {
+     "startDate": "2017-05-12T13:30:00+02:00",
+     "eventName": "Lunch :)",
+     "eventDescription": "🍵",
+     "performerName": "Infobip people",
+     "trackName": "All"
+  },
+  {
+     "startDate": "2017-05-12T14:30:00+02:00",
+     "eventName": "LibreNMS monitoring and metrics",
+     "eventDescription": "How can LibreNMS help both dev and net teams to monitor critical metrics and detect anomalies on their instances",
+     "performerName": "Kišić",
+     "trackName": "DEV/NET Track 1"
+  },
+  {
+     "startDate": "2017-05-12T14:30:00+02:00",
+     "eventName": "Secure configurations with Vault",
+     "eventDescription": "Passwords in configuration files are bad but we have a solution",
+     "performerName": "Obestar",
+     "trackName": "DEV/NET Track 1"
+  },
+  {
+     "startDate": "2017-05-12T14:30:00+02:00",
+     "eventName": "Bash testing",
+     "eventDescription": "Yes, it is possible to write tests for bash scripts and it looks better than tests in java!",
+     "performerName": "Žagar",
+     "trackName": "DEV/NET Track 1"
+  },
+  {
+     "startDate": "2017-05-12T14:30:00+02:00",
+     "eventName": "Bitbucket tips & tricks",
+     "eventDescription": "What has changed since the upgrade of Stash to Bitbucket. Short overview of features.",
+     "performerName": "Pandžić",
+     "trackName": "DEV/NET Track 1"
+  },
+  {
+     "startDate": "2017-05-12T14:30:00+02:00",
+     "eventName": "JIRA analysis",
+     "eventDescription": "Which graphs are cool, what data are we using and what data are you using?",
+     "performerName": "Dučić",
+     "trackName": "DEV/NET Track 1"
+  },
+  {
+     "startDate": "2017-05-12T14:30:00+02:00",
+     "eventName": "Architecture behind Customer portal",
+     "eventDescription": "Overview of Infobip backend services behind Customer portal and communicatio n between them. After this presentation you will be able to understand campaign message flow and how message is sent to the end user",
+     "performerName": "Hula, Sušilović",
+     "trackName": "DEV/NET Track 2"
+  },
+  {
+     "startDate": "2017-05-12T14:30:00+02:00",
+     "eventName": "Networking updates",
+     "eventDescription": "(no additional info provided)",
+     "performerName": "Undefined person or team",
+     "trackName": "DEV/NET Track 3"
+  },
+  {
+     "startDate": "2017-05-12T14:30:00+02:00",
+     "eventName": "Brainstorm conclusion (4x15 min) & wrap-up 1st part",
+     "eventDescription": "(no additional info provided)",
+     "performerName": "Product owners",
+     "trackName": "PO"
+  },
+  {
+     "startDate": "2017-05-12T15:00:00+02:00",
+     "eventName": "Coffee and talk break",
+     "eventDescription": "🍵",
+     "performerName": "Infobip people",
+     "trackName": "All"
+  },
+  {
+     "startDate": "2017-05-12T15:20:00+02:00",
+     "eventName": "Automated testing",
+     "eventDescription": "Auto-testing of the entire system, tools for testing (cucumber, jmeter, etc)",
+     "performerName": "Markelov",
+     "trackName": "DEV/NET Track 1"
+  },
+  {
+     "startDate": "2017-05-12T15:20:00+02:00",
+     "eventName": "How can Kafka help you? Microservices and streaming with Kafka",
+     "eventDescription": "Goal: Give ideas to Infobip engineers how they can use Kafka, Use cases for which the current Kafka cluster data can be used New use cases (put your data in Kafka) Detailed pros and cons",
+     "performerName": "Poldrugo",
+     "trackName": "DEV/NET Track 2"
+  },
+  {
+     "startDate": "2017-05-12T15:20:00+02:00",
+     "eventName": "Networking updates",
+     "eventDescription": "(no additional info provided)",
+     "performerName": "Undefined person or team",
+     "trackName": "DEV/NET Track 3"
+  },
+  {
+     "startDate": "2017-05-12T15:20:00+02:00",
+     "eventName": "Brainstorm conclusion (4x15 min) & wrap-up 2nd part",
+     "eventDescription": "(no additional info provided)",
+     "performerName": "Product owners",
+     "trackName": "PO"
+  },
+  {
+     "startDate": "2017-05-12T15:50:00+02:00",
+     "eventName": "Coffee and talk break",
+     "eventDescription": "🍵",
+     "performerName": "Infobip people",
+     "trackName": "All"
+  },
+  {
+     "startDate": "2017-05-12T16:10:00+02:00",
+     "eventName": "Open Space / Workshops / Meetings",
+     "eventDescription": "(no additional info provided)",
+     "performerName": "Infobip people",
+     "trackName": "All"
+  },
+  {
+     "startDate": "2017-05-12T19:00:00+02:00",
+     "eventName": "Dinner",
+     "eventDescription": "🍵",
+     "performerName": "Infobip people",
+     "trackName": "All"
+  },
+  {
+     "startDate": "2017-05-12T21:30:00+02:00",
+     "eventName": "Social games",
+     "eventDescription": "(no additional info provided)",
+     "performerName": "Infobip people",
+     "trackName": "All"
+  }
 ]
