@@ -4,11 +4,7 @@ import org.logout.notifications.telegram.data.entities.InfobipIncomingPackage
 import org.logout.notifications.telegram.infobipbot.InfobipTelegramBot
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestParam
-import org.springframework.web.bind.annotation.RestController
-import javax.ws.rs.PathParam
+import org.springframework.web.bind.annotation.*
 
 
 @RestController
@@ -24,7 +20,7 @@ open class MainHTTPController @Autowired constructor(
     }
 
     @PostMapping("/accept/{botToken}")
-    open fun acceptTelegramUpdate(@PathParam("botToken") token: String,
+    open fun acceptTelegramUpdate(@PathVariable("botToken") token: String,
                                   incomingPackage: InfobipIncomingPackage) {
         if (botToken != token)
             throw SecurityException("Unrecognized URL")
@@ -32,7 +28,10 @@ open class MainHTTPController @Autowired constructor(
     }
 
     @PostMapping("/notifyAll/{botToken}")
-    open fun sendToEveryone(messageText: String) {
+    open fun sendToEveryone(@PathVariable("botToken") token: String,
+                            @RequestBody messageText: String) {
+        if (botToken != token)
+            throw SecurityException("Unrecognized URL")
         bot.sendToEveryone(messageText)
     }
 
