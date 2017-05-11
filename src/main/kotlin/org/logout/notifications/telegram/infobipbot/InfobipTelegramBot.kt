@@ -2,6 +2,7 @@ package org.logout.notifications.telegram.infobipbot
 
 import org.logout.notifications.telegram.bot.processor.HelpProcessor
 import org.logout.notifications.telegram.bot.processor.StaImaNextEventProcessor
+import org.logout.notifications.telegram.bot.processor.StartProcessor
 import org.logout.notifications.telegram.data.entities.InfobipIncomingMessage
 import org.logout.notifications.telegram.data.entities.InfobipIncomingPackage
 import org.slf4j.LoggerFactory
@@ -15,7 +16,8 @@ import javax.annotation.PostConstruct
 class InfobipTelegramBot @Autowired constructor(private val taskScheduler: TaskScheduler,
                                                 private val infobipTelegramService: InfobipTelegramService,
                                                 private val staimaProcessor: StaImaNextEventProcessor,
-                                                private val helpProcessor: HelpProcessor) {
+                                                private val helpProcessor: HelpProcessor,
+                                                private val startProcessor: StartProcessor) {
     companion object {
         val log = LoggerFactory.getLogger(InfobipTelegramBot::class.java)
     }
@@ -41,6 +43,9 @@ class InfobipTelegramBot @Autowired constructor(private val taskScheduler: TaskS
         if (message.message.type == "TEXT") {
             val text = message.message.text
             when {
+                text.startsWith("/start") ->
+                    infobipTelegramService.sendSingleMessage(startProcessor.onMessage(args(text)),
+                            message.from)
                 text.startsWith("/staima") ||
                         text.startsWith("/whatsup") ||
                         text.startsWith("/whazup") ||
