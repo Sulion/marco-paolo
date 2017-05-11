@@ -1,68 +1,218 @@
 [
   {
-    "startDate": "2017-09-11T08:30:00",
+    "startDate": "2017-05-11T09:30:00+02:00",
     "eventName": "Overview of development and divisions intro",
     "performerName": "Jelenić, Benić",
     "trackName": "All"
   },
   {
-    "startDate": "2017-09-11T09:00:00",
+    "startDate": "2017-05-11T10:00:00+02:00",
     "eventName": "Infrastructure program",
     "performerName": "Mađer, Dubovac, Stipanov, Žagar",
     "trackName": "All"
   },
   {
-    "startDate": "2017-09-11T09:20:00",
+    "startDate": "2017-05-11T10:20:00+02:00",
     "eventName": "Coffee and talk break",
     "performerName": "Infobip People",
     "trackName": "All"
   },
   {
-    "startDate": "2017-09-11T09:40:00",
+    "startDate": "2017-05-11T10:40:00+02:00",
     "eventName": "Platform program",
     "performerName": "Žmak, Mimica",
     "trackName": "All"
   },
   {
-    "startDate": "2017-09-11T10:00:00",
+    "startDate": "2017-05-11T11:00:00+02:00",
     "eventName": "Enterprise program",
     "performerName": "Kutić, Kontosić, Kos-Grabar",
     "trackName": "All"
   },
   {
-    "startDate": "2017-09-11T10:20:00",
+    "startDate": "2017-05-11T11:20:00+02:00",
     "eventName": "Group photo break",
     "performerName": "Infobip People",
     "trackName": "All"
   },
   {
-    "startDate": "2017-09-11T10:50:00",
+    "startDate": "2017-05-11T11:50:00+02:00",
     "eventName": "Openstack",
     "performerName": "Koraca",
     "trackName": "DEV/NET Track 1"
   },
   {
-    "startDate": "2017-09-11T10:50:00",
+    "startDate": "2017-05-11T11:50:00+02:00",
     "eventName": "Anomaly detection and monitoring",
     "performerName": "Bičo, Džaferović",
     "trackName": "DEV/NET Track 2"
   },
   {
-    "startDate": "2017-09-11T10:50:00",
+    "startDate": "2017-05-11T11:50:00+02:00",
     "eventName": "Spring Statemachine",
     "performerName": "mGate Team",
     "trackName": "DEV/NET Track 3"
   },
   {
-    "startDate": "2017-09-11T10:50:00",
+    "startDate": "2017-05-11T11:50:00+02:00",
     "eventName": "Demystifying IPCore",
     "performerName": "Jurki",
     "trackName": "PO"
   },
   {
-    "startDate": "2017-09-11T10:20:00",
+    "startDate": "2017-05-11T12:20:00+02:00",
+    "eventName": "Coffee and talk break",
+    "performerName": "Infobip people",
+    "trackName": "All"
+  },
+  {
+    "startDate": "2017-05-11T12:40:00+02:00",
+    "eventName": "Fully automated service monitoring",
+    "performerName": "Markanović",
+    "trackName": "DEV/NET Track 1"
+  },
+  {
+    "startDate": "2017-05-11T12:40:00+02:00",
+    "eventName": "Flame graphs",
+    "performerName": "Mahovlić",
+    "trackName": "DEV/NET Track 2"
+  },
+  {
+    "startDate": "2017-05-11T12:40:00+02:00",
+    "eventName": "Spring cloud dataflow",
+    "performerName": "Dučić",
+    "trackName": "DEV/NET Track 3"
+  },
+  {
+    "startDate": "2017-05-11T12:40:00+02:00",
+    "eventName": "Client engagement activities overview - events and clients",
+    "performerName": "Kutić",
+    "trackName": "PO"
+  },
+  {
+    "startDate": "2017-05-11T13:10:00+02:00",
+    "eventName": "Lunch break",
+    "performerName": "Infobip people",
+    "trackName": "All"
+  },
+  {
+    "startDate": "2017-05-11T14:10:00+02:00",
+    "eventName": "Lightning talks! Automation of our deployment process / Deployment manager plugin / Production access automation / Java meetup",
+    "performerName": "Hula / Dokara / El Tabari / Dučić",
+    "trackName": "DEV/NET Track 1"
+  },
+  {
+    "startDate": "2017-05-11T14:10:00+02:00",
+    "eventName": "Connecting with operators",
+    "performerName": "NDI team",
+    "trackName": "DEV/NET Track 2"
+  },
+  {
+    "startDate": "2017-05-11T14:10:00+02:00",
+    "eventName": "CompletableFuture puzzlers",
+    "performerName": "Kuznetsov",
+    "trackName": "DEV/NET Track 3"
+  },
+  {
+    "startDate": "2017-05-11T14:10:00+02:00",
+    "eventName": "Panel discussion on future products",
+    "performerName": "Žmak",
+    "trackName": "PO"
+  },
+  {
+    "startDate": "2017-05-11T14:40:00+02:00",
+    "eventName": "Coffe and talk break",
+    "performerName": "Infobip people",
+    "trackName": "All"
+  },
+  {
+    "startDate": "2017-05-11T15:00:00+02:00",
+    "eventName": "Java native memory troubleshooting",
+    "performerName": "Mimica",
+    "trackName": "DEV/NET Track 1"
+  },
+  {
+    "startDate": "2017-05-11T15:00:00+02:00",
+    "eventName": "ORM frameworks",
+    "performerName": "DB team",
+    "trackName": "DEV/NET Track 2"
+  },
+  {
+    "startDate": "2017-05-11T15:00:00+02:00",
+    "eventName": "Lightning talks! Async processing at IAM / Using IAM as authentication and authorization proxy / DB proxy and MS JDBC driver / Sprint @Scheduled trap",
+    "performerName": "Ćutić / Pandžić / Rumin / Matošević",
+    "trackName": "DEV/NET Track 3"
+  },
+  {
+    "startDate": "2017-05-11T15:00:00+02:00",
+    "eventName": "How to increase product engagement, 1st part: OMNI, OTT, mail, push, voice",
+    "performerName": "Product owners",
+    "trackName": "PO"
+  },
+  {
+    "startDate": "2017-05-11T15:30:00+02:00",
+    "eventName": "Coffee and talk break",
+    "performerName": "Infobip people",
+    "trackName": "All"
+  },
+  {
+    "startDate": "2017-05-11T15:50:00+02:00",
+    "eventName": "Provisioning VMs on DM",
+    "performerName": "Dostić / Pindrić",
+    "trackName": "DEV/NET Track 1"
+  },
+  {
+    "startDate": "2017-05-11T15:50:00+02:00",
+    "eventName": "War stories",
+    "performerName": "El Tabari",
+    "trackName": "DEV/NET Track 2"
+  },
+  {
+    "startDate": "2017-05-11T15:50:00+02:00",
+    "eventName": "Java reactive programming",
+    "performerName": "Antoliš",
+    "trackName": "DEV/NET Track 3"
+  },
+  {
+    "startDate": "2017-05-11T15:50:00+02:00",
+    "eventName": "How to increase product engagement, 2nd part",
+    "performerName": "Produt owners",
+    "trackName": "PO"
+  },
+  {
+    "startDate": "2017-05-11T16:20:00+02:00",
+    "eventName": "Coffee and talk break",
+    "performerName": "Infobip people",
+    "trackName": "All"
+  },
+  {
+    "startDate": "2017-05-11T16:30:00+02:00",
+    "eventName": "Workshops / Meetings / Open space",
+    "performerName": "Infobip people",
+    "trackName": "All"
+  },
+  {
+    "startDate": "2017-05-11T19:00:00+02:00",
+    "eventName": "Dinner :)",
+    "performerName": "Infobip people",
+    "trackName": "All"
+  },
+  {
+    "startDate": "2017-05-11T21:30:00+02:00",
+    "eventName": "Infobip Geek Quiz",
+    "performerName": "Infobip People",
+    "trackName": "All"
+  },
+  {
+    "startDate": "2017-05-12T09:00:00+02:00",
+    "eventName": "Telco division",
+    "performerName": "Kovačić, Milotić, Vučković",
+    "trackName": ""
+  },
+  {
+    "startDate": "2017-05-12T10:00:00+02:00",
     "eventName": "",
     "performerName": "",
     "trackName": ""
-  }
+  },
 ]
