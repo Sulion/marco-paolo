@@ -22,6 +22,8 @@ class StaImaNextEventProcessor(private val eventRegistry: EventRegistry) {
                     "I'm not that smart yet"
             }
 
+    private val MAX_MSG_LENGTH = 1000
+
     private fun renderEventsForToday(): String {
         val nextEvents = eventRegistry.findEventsForToday(Date())
         return when (nextEvents.size) {
@@ -30,8 +32,12 @@ class StaImaNextEventProcessor(private val eventRegistry: EventRegistry) {
                 val msg = StringBuilder().append("Your schedule for the rest of the day: \\n")
                 nextEvents.forEachIndexed {
                     index, (startDate, eventName, performerName, trackName) ->
-                    msg.append("$index. ${render2(startDate)}: $eventName by " +
-                            "$performerName on $trackName track\\n")
+                    run {
+                        val line = "$index. ${render2(startDate)}: $eventName by " +
+                                "$performerName on $trackName track\\n"
+                        if (msg.length + line.length < MAX_MSG_LENGTH)
+                            msg.append(line)
+                    }
                 }
                 msg.toString().also { log.info("This will be sent: {}", it) }
             }
