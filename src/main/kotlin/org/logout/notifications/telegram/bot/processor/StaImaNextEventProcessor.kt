@@ -17,7 +17,7 @@ class StaImaNextEventProcessor(private val eventRegistry: EventRegistry) {
             }
 
     private fun renderEventsForToday(): String {
-        val nextEvents = eventRegistry.findAllEventsRightAfter(Date())
+        val nextEvents = eventRegistry.findEventsForToday(Date())
         return when (nextEvents.size) {
             0 -> renderNoEvents(Date())
             else -> {
