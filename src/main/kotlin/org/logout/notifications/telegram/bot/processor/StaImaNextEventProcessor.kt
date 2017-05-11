@@ -10,8 +10,27 @@ class StaImaNextEventProcessor(private val eventRegistry: EventRegistry) {
             if (arguments == null || arguments.isEmpty()) {
                 allNextEvents()
             } else {
-                "I'm not that smart yet"
+                if (arguments.size == 1 && "today" in arguments) {
+                    renderEventsForToday()
+                } else
+                    "I'm not that smart yet"
             }
+
+    private fun renderEventsForToday(): String {
+        val nextEvents = eventRegistry.findAllEventsRightAfter(Date())
+        return when (nextEvents.size) {
+            0 -> renderNoEvents(Date())
+            else -> {
+                val msg = StringBuilder().append("Your schedule for the rest of the day: \n")
+                nextEvents.forEachIndexed {
+                    index, (startDate, eventName, performerName, trackName) ->
+                    msg.append("$index. ${render2(startDate)}: $eventName by " +
+                            "$performerName on $trackName track\n")
+                }
+                msg.toString()
+            }
+        }
+    }
 
     private fun simpleNextEvent(): String {
         val next = eventRegistry.findNextEventAfter(Date())
@@ -57,6 +76,11 @@ class StaImaNextEventProcessor(private val eventRegistry: EventRegistry) {
 
     private fun render(date: Date): String =
             SimpleDateFormat("MMM dd, HH:mm").apply {
+                timeZone = TimeZone.getTimeZone("Europe/Zagreb")
+            }.format(date)
+
+    private fun render2(date: Date): String =
+            SimpleDateFormat("HH:mm").apply {
                 timeZone = TimeZone.getTimeZone("Europe/Zagreb")
             }.format(date)
 
