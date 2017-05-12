@@ -22,7 +22,7 @@ class StaImaGetNextEventCommand(val processor: StaImaNextEventProcessor) : BotCo
         try {
             absSender.sendMessage(SendMessage().apply {
                 chatId = chat.id.toString()
-                text = processor.onMessage(arguments)
+                text = processor.onMessage(arguments).joinToString(separator = "\n")
             })
         } catch (e: TelegramApiException) {
             BotLogger.error(LOGTAG, e)

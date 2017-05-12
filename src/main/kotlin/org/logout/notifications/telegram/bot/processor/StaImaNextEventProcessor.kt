@@ -5,6 +5,7 @@ import org.logout.notifications.telegram.data.events.EventRegistry
 import org.slf4j.LoggerFactory
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 class StaImaNextEventProcessor(private val eventRegistry: EventRegistry) : Processor {
 
@@ -12,77 +13,92 @@ class StaImaNextEventProcessor(private val eventRegistry: EventRegistry) : Proce
         val log = LoggerFactory.getLogger(StaImaNextEventProcessor::class.java)
     }
 
-    override fun onMessage(arguments: Array<String>?): String =
+    private val IDUNNO_ANSWER = listOf("I'm not that smart yet")
+
+    override fun onMessage(arguments: Array<String>?): List<String> =
             if (arguments == null || arguments.isEmpty()) {
-                allNextEvents()
+                allNextEvents(this::renderSingleEvent, this::renderMultipleEvents)
             } else {
-                if (arguments.size == 1 && "today" in arguments) {
-                    renderEventsForToday()
+                if (arguments.size == 1) {
+                    when (arguments[0]) {
+                        "today" -> renderEventsForToday()
+                        "--verbose" -> allNextEvents(this::renderSingleEventWithDetails, this::renderMultipleEventsWithDetails)
+                        else -> IDUNNO_ANSWER
+                    }
                 } else
-                    "I'm not that smart yet"
+                    IDUNNO_ANSWER
             }
 
     private val MAX_MSG_LENGTH = 1000
 
-    private fun renderEventsForToday(): String {
+    private fun renderEventsForToday(): List<String> {
         val nextEvents = eventRegistry.findEventsForToday(Date())
         return when (nextEvents.size) {
             0 -> renderNoEvents(Date())
             else -> {
-                val msg = StringBuilder().append("Your schedule for the rest of the day: \n")
-                nextEvents.forEachIndexed {
+                val msg = ArrayList<String>().apply { add("Your schedule for the rest of the day: \n") }
+                msg.addAll(nextEvents.mapIndexed {
                     index, (startDate, eventName, performerName, trackName) ->
-                    run {
-                        val line = "$index. ${render2(startDate)}: $eventName by " +
-                                "$performerName on $trackName track\n"
-                        if (msg.length + line.length < MAX_MSG_LENGTH)
-                            msg.append(line)
-                    }
-                }
-                msg.toString().also { log.trace("This will be sent: {}", it) }
+                    "$index. ${render2(startDate)}: $eventName by " +
+                            "$performerName on $trackName track\n"
+                })
+                return batchLines(msg)
             }
         }
     }
 
-    private fun simpleNextEvent(): String {
-        val next = eventRegistry.findNextEventAfter(Date())
-        return if (next != null) {
-            renderSingleEvent(next)
-        } else {
-            "You don't seem to have anything planned. Enjoy your spare time!"
-        }
-    }
-
     private fun renderSingleEvent(event: Event) =
-            "Your next event is ${event.eventName} by " +
+            listOf("Your next event is ${event.eventName} by " +
                     "${event.performerName} at ${render(event.startDate)} on " +
-                    "${event.trackName} track. Get ready!"
+                    "${event.trackName} track. Get ready!")
 
-    private fun renderMultipleEvents(events: List<Event>): String {
-        val msg = StringBuilder().append("Your next events are: \n")
-        events.forEachIndexed { index, (startDate, eventName, performerName, trackName) ->
-            msg.append("$index. $eventName by " +
-                    "$performerName at ${render(startDate)} on $trackName track\n")
-        }
+    private fun renderSingleEventWithDetails(event: Event) =
+            listOf("Your next event is ${event.eventName} by " +
+                    "${event.performerName} at ${render(event.startDate)} on " +
+                    "${event.trackName} track. Abstract: " +
+                    "${renderDescription(event.eventDescription, 100)}\n Get ready!")
 
-        return msg.append("Choose wisely!").toString()
+    private fun renderDescription(str: String?, offset: Int) =
+            str?.substring(0, Math.min(MAX_MSG_LENGTH - offset, str.length)) ?: ""
+
+
+    private fun renderMultipleEvents(events: List<Event>): List<String> {
+        val msg = ArrayList<String>().apply { add("Your next events are: \n") }
+        msg.addAll(events.mapIndexed {
+            index, (startDate, eventName, performerName, trackName) ->
+            "$index. $eventName by $performerName at ${render(startDate)} on $trackName track\n"
+        })
+        msg.add("Choose wisely!")
+        return batchLines(msg)
+    }
+
+    private fun renderMultipleEventsWithDetails(events: List<Event>): List<String> {
+        val msg = ArrayList<String>().apply { add("Your next events are: \n") }
+        msg.addAll(events.mapIndexed {
+            index, (startDate, eventName, performerName, trackName, eventDescription) ->
+            "$index. $eventName by $performerName at ${render(startDate)} on $trackName track. " +
+                    "Abstract: ${renderDescription(eventDescription, 150)} \n"
+        })
+        msg.add("Choose wisely!")
+        return batchLines(msg)
     }
 
 
-    private fun allNextEvents(): String {
+    private fun allNextEvents(singleRenderer: (Event) -> List<String>,
+                              multipleRenderer: (List<Event>) -> List<String>): List<String> {
         val nextEvents = eventRegistry.findAllEventsRightAfter(Date())
         return when (nextEvents.size) {
             0 -> renderNoEvents(Date())
-            1 -> renderSingleEvent(nextEvents[0])
-            else -> renderMultipleEvents(nextEvents)
+            1 -> singleRenderer(nextEvents[0])
+            else -> multipleRenderer(nextEvents)
         }
     }
 
     private fun renderNoEvents(date: Date) =
             if (date.after(eventRegistry.getLastEventTime())) {
-                "Dev Days have ended. See you in 2018!"
+                listOf("Dev Days have ended. See you in 2018!")
             } else {
-                "You don't seem to have anything planned. Enjoy your spare time!"
+                listOf("You don't seem to have anything planned. Enjoy your spare time!")
             }
 
 
@@ -96,4 +112,16 @@ class StaImaNextEventProcessor(private val eventRegistry: EventRegistry) : Proce
                 timeZone = TimeZone.getTimeZone("Europe/Zagreb")
             }.format(date)
 
+    internal fun batchLines(lines: List<String>): List<String> {
+        var temp = StringBuilder()
+        val results = ArrayList<String>()
+        for (line in lines) {
+            if (temp.length + line.length > 300) {
+                results.add(temp.toString())
+                temp = StringBuilder()
+            }
+            temp.append(line)
+        }
+        return results
+    }
 }

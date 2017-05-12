@@ -1,8 +1,6 @@
 package org.logout.notifications.telegram.infobipbot
 
-import org.logout.notifications.telegram.bot.processor.HelpProcessor
-import org.logout.notifications.telegram.bot.processor.StaImaNextEventProcessor
-import org.logout.notifications.telegram.bot.processor.StartProcessor
+import org.logout.notifications.telegram.bot.processor.*
 import org.logout.notifications.telegram.data.entities.InfobipIncomingMessage
 import org.logout.notifications.telegram.data.entities.InfobipIncomingPackage
 import org.slf4j.LoggerFactory
@@ -17,7 +15,8 @@ class InfobipTelegramBot @Autowired constructor(private val taskScheduler: TaskS
                                                 private val infobipTelegramService: InfobipTelegramService,
                                                 private val staimaProcessor: StaImaNextEventProcessor,
                                                 private val helpProcessor: HelpProcessor,
-                                                private val startProcessor: StartProcessor) {
+                                                private val startProcessor: StartProcessor,
+                                                private val dissentProcessor: DissentProcessor) {
     companion object {
         val log = LoggerFactory.getLogger(InfobipTelegramBot::class.java)
     }
@@ -43,26 +42,30 @@ class InfobipTelegramBot @Autowired constructor(private val taskScheduler: TaskS
         if (message.message.type == "TEXT") {
             val text = message.message.text
             when {
-                text.startsWith("/start") ->
-                    infobipTelegramService.sendSingleMessage(startProcessor.onMessage(args(text)),
-                            message.from)
+                text.startsWith("jebiga") ||
+                        text.startsWith("/jebiga") -> processMessage(dissentProcessor, message)
+                text.startsWith("/start") -> processMessage(startProcessor, message)
                 text.startsWith("/staima") ||
                         text.startsWith("/whatsup") ||
                         text.startsWith("/whazup") ||
-                        text.startsWith("/чотамухохлов") ->
-                    infobipTelegramService.sendSingleMessage(
-                            staimaProcessor.onMessage(args(text)),
-                            message.from)
-                text.startsWith("/help") -> infobipTelegramService.sendSingleMessage(
-                        helpProcessor.onMessage(args(text)),
-                        message.from)
+                        text.startsWith("/чотамухохлов") -> processMessage(staimaProcessor, message)
+                text.startsWith("/help") -> processMessage(helpProcessor, message)
                 else -> infobipTelegramService.sendSingleMessage(message.message.text, message.from)
             }
         }
     }
 
+    internal fun processMessage(processor: Processor, message: InfobipIncomingMessage) {
+        processor.onMessage(args(message.message.text))
+                .forEach { infobipTelegramService.sendSingleMessage(it, message.from) }
+    }
+
+    internal fun sendCompositeMessages(lines: List<String>, toKey: String) {
+        lines.forEach { infobipTelegramService.sendSingleMessage(it, toKey) }
+    }
+
     private fun args(str: String) =
-            str.split(Regex("\\s")).drop(1/*/staima*/).toTypedArray()
+            str.split(Regex("\\s")).drop(1/*command name itself*/).toTypedArray()
 
     fun sendToEveryone(messageText: String) {
         infobipTelegramService.fetchUsers().users.forEach {
