@@ -58,4 +58,18 @@ class EventRegistryTest {
         assertEquals(6, result.size)
     }
 
+    @Test
+    fun test_findCurrentEvent() {
+        val calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"))
+        val date = calendar.apply {
+            set(2017, Calendar.MAY, 11, 10, 55, 0)
+            set(Calendar.MILLISECOND, 0)
+        }.time
+        val result = registry.findLastStartedEvents(date)
+        print(result.joinToString(separator = "\n") + "\n")
+        val interval = date.time - result[0].startDate.time
+        val minutesSince = interval / 1000 / 60
+        println(minutesSince)
+    }
+
 }

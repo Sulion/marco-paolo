@@ -32,4 +32,9 @@ class EventRegistry(stream: InputStream, parser: ObjectMapper) {
         return data.filter { it.startDate.time in date.time..endDate.time }
     }
 
+    fun findLastStartedEvents(date: Date): List<Event> {
+        val oneOf = data.findLast { it.startDate.before(date) } ?: return emptyList()
+        return data.filter { it.startDate == oneOf.startDate }
+    }
+
 }

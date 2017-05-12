@@ -23,11 +23,40 @@ class StaImaNextEventProcessor(private val eventRegistry: EventRegistry) : Proce
                     when (arguments[0]) {
                         "today" -> renderEventsForToday()
                         "-v" -> allNextEvents(this::renderSingleEventWithDetails, this::renderMultipleEventsWithDetails)
+                        "now" -> allCurrentEvents(this::renderSingleCurrentEventWithDetails, this::renderMultipleCurrentEventsWithDetails)
                         else -> IDUNNO_ANSWER
                     }
                 } else
                     IDUNNO_ANSWER
             }
+
+    private fun allCurrentEvents(singleRenderer: (Event) -> List<String>,
+                                 multipleRenderer: (List<Event>) -> List<String>): List<String> {
+        val events = eventRegistry.findLastStartedEvents(Date())
+        val resultLines = ArrayList<String>()
+        if (events.isNotEmpty()) {
+            val startDate = events[0].startDate
+            val minutesSince = (System.currentTimeMillis() - startDate.time) / 1000 / 60
+            if (minutesSince < 15)
+                resultLines.add("Hurry up! This is what I found has started in the last 15 minutes:\n")
+            if (minutesSince in 15..30)
+                resultLines.add("I think you'll still be able to make it:\n")
+            if (minutesSince in 30..60)
+                resultLines.add("This is what has been happening recently, but I don't think it still on:\n")
+            if (minutesSince > 60) {
+                resultLines.add("No events have started in the last hour. Shouldn't you be sleeping?")
+                return resultLines
+            }
+        }
+        resultLines.addAll(when (events.size) {
+            0 -> renderNoEvents(Date())
+            1 -> singleRenderer(events[0])
+            else -> multipleRenderer(events)
+        })
+        return batchLines(resultLines)
+    }
+
+
 
     private val MAX_MSG_LENGTH = 1000
 
@@ -58,6 +87,12 @@ class StaImaNextEventProcessor(private val eventRegistry: EventRegistry) : Proce
                     "${event.trackName} track. Abstract: " +
                     "${renderDescription(event.eventDescription, 100)}\n Get ready!")
 
+    private fun renderSingleCurrentEventWithDetails(event: Event) =
+            listOf("${event.eventName} by " +
+                    "${event.performerName} on " +
+                    "${event.trackName} track has started at ${render(event.startDate)}. Abstract: " +
+                    "${renderDescription(event.eventDescription, 100)}\n")
+
     private fun renderDescription(str: String?, offset: Int) =
             str?.substring(0, Math.min(MAX_MSG_LENGTH - offset, str.length)) ?: ""
 
@@ -81,6 +116,17 @@ class StaImaNextEventProcessor(private val eventRegistry: EventRegistry) : Proce
         })
         msg.add("Choose wisely!")
         return batchLines(msg)
+    }
+
+    private fun renderMultipleCurrentEventsWithDetails(events: List<Event>): List<String> {
+        val msg = ArrayList<String>()
+        msg.addAll(events.mapIndexed {
+            index, (startDate, eventName, performerName, trackName, eventDescription) ->
+            "$index. $eventName by $performerName has started at ${render(startDate)} on $trackName track. " +
+                    "Abstract: ${renderDescription(eventDescription, 150)} \n"
+        })
+        msg.add("Choose wisely!")
+        return msg
     }
 
 
