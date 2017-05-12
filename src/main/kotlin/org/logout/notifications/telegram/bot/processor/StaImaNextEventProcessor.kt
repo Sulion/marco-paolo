@@ -122,6 +122,7 @@ class StaImaNextEventProcessor(private val eventRegistry: EventRegistry) : Proce
             }
             temp.append(line)
         }
+        results.add(temp.toString())
         return results
     }
 }
