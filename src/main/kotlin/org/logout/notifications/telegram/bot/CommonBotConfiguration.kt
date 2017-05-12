@@ -1,6 +1,7 @@
 package org.logout.notifications.telegram.bot
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import org.logout.notifications.telegram.bot.processor.DissentProcessor
 import org.logout.notifications.telegram.bot.processor.HelpProcessor
 import org.logout.notifications.telegram.bot.processor.StaImaNextEventProcessor
 import org.logout.notifications.telegram.bot.processor.StartProcessor
@@ -25,5 +26,6 @@ open class CommonBotConfiguration {
 
     @Bean open fun helpProcessor() = HelpProcessor()
     @Bean open fun startProcessor() = StartProcessor()
+    @Bean open fun dissentProcessor() = DissentProcessor()
 
 }
