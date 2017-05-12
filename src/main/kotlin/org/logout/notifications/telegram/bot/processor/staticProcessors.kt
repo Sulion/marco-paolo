@@ -6,6 +6,7 @@ class HelpProcessor : Processor {
             listOf("/staima, /whatsup and a couple of secret aliases — the closest next event in near future\n" +
                     "/staima today — as much of today's schedule which will fit in 1000 characters. " +
                     "This is going to be changed soon to send the whole day's schedule.\n" +
+                    "/staima -v — if you want to see abstracts for the upcoming events" +
                     "Anything else is just gets repeated back at you. Maybe. Or bot could suddenly acquire sentience and look back at you.")
 }
 

@@ -22,7 +22,7 @@ class StaImaNextEventProcessor(private val eventRegistry: EventRegistry) : Proce
                 if (arguments.size == 1) {
                     when (arguments[0]) {
                         "today" -> renderEventsForToday()
-                        "--verbose" -> allNextEvents(this::renderSingleEventWithDetails, this::renderMultipleEventsWithDetails)
+                        "-v" -> allNextEvents(this::renderSingleEventWithDetails, this::renderMultipleEventsWithDetails)
                         else -> IDUNNO_ANSWER
                     }
                 } else
