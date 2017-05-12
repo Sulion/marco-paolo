@@ -116,7 +116,7 @@ class StaImaNextEventProcessor(private val eventRegistry: EventRegistry) : Proce
         var temp = StringBuilder()
         val results = ArrayList<String>()
         for (line in lines) {
-            if (temp.length + line.length > 300) {
+            if (temp.length + line.length > MAX_MSG_LENGTH) {
                 results.add(temp.toString())
                 temp = StringBuilder()
             }
