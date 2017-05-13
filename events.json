@@ -563,5 +563,131 @@
      "eventDescription": "(no additional info provided)",
      "performerName": "Infobip people",
      "trackName": "All"
-  }
+  },
+  	{
+		"startDate": "2017-05-13T10:30:00+02:00",
+		"eventName": "Coffee and talk break",
+		"eventDescription": "🍵",
+		"performerName": "Infobip people",
+		"trackName": "All"
+	},
+	{
+		"startDate": "2017-05-13T10:50:00+02:00",
+		"eventName": "Prometheus",
+		"eventDescription": "👍",
+		"performerName": "Obestar, Stipanov",
+		"trackName": "All"
+	},
+	{
+		"startDate": "2017-05-13T11:30:00+02:00",
+		"eventName": "Coffee and talk break",
+		"eventDescription": "🍵",
+		"performerName": "Infobip people",
+		"trackName": "All"
+	},
+	{
+		"startDate": "2017-05-13T11:50:00+02:00",
+		"eventName": "Migrating to serverless",
+		"eventDescription": "💻",
+		"performerName": "Adžić",
+		"trackName": "All"
+	},
+	{
+		"startDate": "2017-05-13T12:45:00+02:00",
+		"eventName": "Lunch break",
+		"eventDescription": "🍵",
+		"performerName": "Infobip people",
+		"trackName": "All"
+	},
+	{
+		"startDate": "2017-05-13T14:00:00+02:00",
+		"eventName": "Space shuttle",
+		"eventDescription": "🚀",
+		"performerName": "Carver",
+		"trackName": "All"
+	},
+	{
+		"startDate": "2017-05-13T15:15:00+02:00",
+		"eventName": "Coffee and talk break",
+		"eventDescription": "🍵",
+		"performerName": "Infobip people",
+		"trackName": "All"
+	},
+	{
+		"startDate": "2017-05-13T15:35:00+02:00",
+		"eventName": "Spring 5 Framework",
+		"eventDescription": "🛠",
+		"performerName": "Hoeller",
+		"trackName": "All"
+	},
+	{
+		"startDate": "2017-05-13T16:35:00+02:00",
+		"eventName": "Coffee and talk break",
+		"eventDescription": "🍵",
+		"performerName": "Infobip people",
+		"trackName": "All"
+	},
+	{
+		"startDate": "2017-05-13T16:55:00+02:00",
+		"eventName": "Lighting talk - Persistent Redis",
+		"eventDescription": "💾",
+		"performerName": "Letenko",
+		"trackName": "All"
+	},
+	{
+		"startDate": "2017-05-13T16:55:00+02:00",
+		"eventName": "Lighting talk - Git crawl",
+		"eventDescription": "📝",
+		"performerName": "Dučić",
+		"trackName": "All"
+	},
+	{
+		"startDate": "2017-05-13T16:55:00+02:00",
+		"eventName": "Lighting talk - Pwnage through 3rd party component",
+		"eventDescription": "🔐",
+		"performerName": "Šerfez",
+		"trackName": "All"
+	},
+	{
+		"startDate": "2017-05-13T16:55:00+02:00",
+		"eventName": "Lighting talk - Automated multi-cloud platform OS image builds",
+		"eventDescription": "🍵",
+		"performerName": "Koraca",
+		"trackName": "All"
+	},
+	{
+		"startDate": "2017-05-13T17:25:00+02:00",
+		"eventName": "Closure and invitation to treasure hunt",
+		"eventDescription": "🍵",
+		"performerName": "Jelenic",
+		"trackName": "All"
+	},
+	{
+		"startDate": "2017-05-13T17:30:00+02:00",
+		"eventName": "Treasure hunt / Ask Spring architect / Q&A",
+		"eventDescription": "⚙",
+		"performerName": "Infobip people",
+		"trackName": "All"
+	},
+	{
+		"startDate": "2017-05-13T18:30:00+02:00",
+		"eventName": "Awards",
+		"eventDescription": "🎉",
+		"performerName": "Infobip people",
+		"trackName": "All"
+	},
+	{
+		"startDate": "2017-05-13T19:00:00+02:00",
+		"eventName": "Dinner",
+		"eventDescription": "🍵",
+		"performerName": "Infobip people",
+		"trackName": "All"
+	},
+	{
+		"startDate": "2017-05-13T21:30:00+02:00",
+		"eventName": "Best speakers awards / Karaoke party",
+		"eventDescription": "🍵",
+		"performerName": "Infobip people",
+		"trackName": "All"
+	}
 ]
